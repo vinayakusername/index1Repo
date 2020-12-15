@@ -52,19 +52,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="StateMachine_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
           <x:Double x:Key="StateContainerWidth">600</x:Double>
           <x:Double x:Key="StateContainerHeight">600</x:Double>
-          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 298.6,77.5 298.6,99.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID2" DisplayName="GenerateRandomState" sap:VirtualizedContainerService.HintSize="114,61" sap2010:WorkflowViewState.IdRef="State_3">
+      <State x:Name="__ReferenceID2" DisplayName="GenerateRandomNumber" sap:VirtualizedContainerService.HintSize="114,61" sap2010:WorkflowViewState.IdRef="State_6">
         <State.Entry>
-          <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[RandomNumber]</OutArgument>
             </Assign.To>
@@ -75,93 +75,97 @@
         </State.Entry>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">243,127.5</av:Point>
+            <av:Point x:Key="ShapeLocation">253,99.5</av:Point>
             <av:Size x:Key="ShapeSize">114,61</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Exit>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Random Number is generated&quot;]" TopMost="True" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;Random Number  &quot;+RandomNumber.ToString+&quot;  is Generated &quot;]" TopMost="True" />
         </State.Exit>
         <State.Transitions>
-          <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_4">
+          <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">300,188.5 300,238.5</av:PointCollection>
-                <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
-                <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                <av:PointCollection x:Key="ConnectorLocation">298.6,160.5 298.6,209.5</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">31</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID0" DisplayName="GuessNumberState" sap:VirtualizedContainerService.HintSize="114,61" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID0" DisplayName="GuessNumberState" sap:VirtualizedContainerService.HintSize="114,61" sap2010:WorkflowViewState.IdRef="State_5">
                 <State.Entry>
-                  <ui:InputDialog Options="{x:Null}" Result="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="314,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Guess Any Number between 1 to 10" Title="Enter Number" />
+                  <ui:InputDialog Options="{x:Null}" DisplayName="Enter Guess Number" sap:VirtualizedContainerService.HintSize="314,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Guess Any Number Between 1 to 10" Title="Enter The Number">
+                    <ui:InputDialog.Result>
+                      <OutArgument x:TypeArguments="x:Int32">[GuessNumber]</OutArgument>
+                    </ui:InputDialog.Result>
+                  </ui:InputDialog>
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">243,238.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">253,209.5</av:Point>
                     <av:Size x:Key="ShapeSize">114,61</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Transitions>
-                  <Transition DisplayName="TrySmallerOne" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_1">
+                  <Transition DisplayName="TrySmallerNumber" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">317.1,299.5 317.1,329.5 294.3,329.5 294.3,299.5</av:PointCollection>
-                        <x:Int32 x:Key="SrcConnectionPointIndex">51</x:Int32>
-                        <x:Int32 x:Key="DestConnectionPointIndex">35</x:Int32>
+                        <av:PointCollection x:Key="ConnectorLocation">338.5,270.5 338.5,300.5 298.6,300.5 298.6,270.5</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">31</x:Int32>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
                       <x:Reference>__ReferenceID0</x:Reference>
                     </Transition.To>
                     <Transition.Action>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Retry" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;guess number is greater than random number,so try smaller one&quot;]" TopMost="True" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Your Guess Number is Greater Than Random Number,So try Smaller Number&quot;]" TopMost="True" />
                     </Transition.Action>
-                    <Transition.Condition>[GuessNumber&gt;RandomNumber]</Transition.Condition>
+                    <Transition.Condition>[GuessNumber &gt;RandomNumber]</Transition.Condition>
                   </Transition>
-                  <Transition DisplayName="TryGreaterNumber" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_2">
+                  <Transition DisplayName="TryGreaterNumber" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">243,272.05 213,272.05 213,329.5 265.8,329.5 265.8,299.5</av:PointCollection>
-                        <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
-                        <x:Int32 x:Key="DestConnectionPointIndex">15</x:Int32>
+                        <av:PointCollection x:Key="ConnectorLocation">253,240 240.1,240 240.1,300.5 270.1,300.5 270.1,270.5</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">11</x:Int32>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
                       <x:Reference>__ReferenceID0</x:Reference>
                     </Transition.To>
                     <Transition.Action>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Retry" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;guess number is smaller than random number,so try greater number&quot;]" TopMost="True" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;Your Guess Number is Smaller than Random number so try Greater Number&quot;]" TopMost="True" />
                     </Transition.Action>
                     <Transition.Condition>[GuessNumber&lt;RandomNumber]</Transition.Condition>
                   </Transition>
-                  <Transition DisplayName="CorrectGuessNumber" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_3">
+                  <Transition DisplayName="CorrectGuessNumber" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">357,275.1 387,275.1 387,269.15 473,269.15</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">367,246.1 453,246.1</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
-                        <x:Int32 x:Key="DestConnectionPointIndex">49</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Transition.Condition>[GuessNumber = RandomNumber]</Transition.Condition>
+                    <Transition.Condition>[GuessNumber =RandomNumber]</Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="114,61" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                      <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="362,395" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
                         <State.Entry>
-                          <Sequence sap:VirtualizedContainerService.HintSize="336,282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                          <Sequence sap:VirtualizedContainerService.HintSize="336,282" sap2010:WorkflowViewState.IdRef="Sequence_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Congratulations, you have guessed correct number&quot;]" TopMost="True" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Random Number is  &quot;+RandomNumber.ToString]" TopMost="True" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;Congratulations,you have guessed correct number&quot;]" TopMost="True" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[&quot;Random Number is &quot;+RandomNumber.ToString]" TopMost="True" />
                           </Sequence>
                         </State.Entry>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">473,229.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">453,209.5</av:Point>
                             <av:Size x:Key="ShapeSize">114,61</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
